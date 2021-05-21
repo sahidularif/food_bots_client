@@ -1,0 +1,10 @@
+.contact{
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+.about{
+    height: 100px;
+     background-color: navy; 
+}
