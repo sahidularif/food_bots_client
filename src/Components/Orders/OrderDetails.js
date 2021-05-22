@@ -3,17 +3,18 @@ import React from 'react';
 const OrderDetails = (props) => {
     const { order_id, items } = props.orderInfo;
     let serialNo = 1;
-    const totalPrice = items?.reduce( (total, prd) => total + prd.price , 0 );
-    const totalTaxPct = items?.reduce( (total, prd) => total + prd.tax_pct , 0 );
+    const totalPrice = items?.reduce((total, prd) => total + prd.price, 0);
+    const totalTaxPct = items?.reduce((total, prd) => total + prd.tax_pct, 0);
     const gTotal = totalPrice + totalTaxPct;
-      console.log(totalPrice)
+    console.log(totalPrice)
     return (
         <div>
-            <table class="table text-center">
+            <table class="table text-center caption-top table-hover">
+                <caption>List of items</caption>
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Item</th>
+                        <th scope="col">Items</th>
                         <th scope="col">Category</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Price</th>
@@ -38,7 +39,7 @@ const OrderDetails = (props) => {
                     <tr>
 
                         <th colspan="7">Total Price</th>
-                        <th>{gTotal}</th>
+                        <th>{gTotal}/=</th>
                     </tr>
                 </tbody>
             </table>

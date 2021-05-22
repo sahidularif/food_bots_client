@@ -1,12 +1,13 @@
 import React from 'react';
 
 const TotalOrder = (props) => {
-    const { order_id, user, items, restaurant } = props.totalOrder;    
-    const totalPrice = items?.reduce( (total, prd) => total + prd.price , 0 );
-    const totalTaxPct = items?.reduce( (total, prd) => total + prd.tax_pct , 0 );
+    const { order_id, user, items, restaurant } = props.totalOrder;
+    const totalPrice = items?.reduce((total, prd) => total + prd.price, 0);
+    const totalTaxPct = items?.reduce((total, prd) => total + prd.tax_pct, 0);
     const gTotal = totalPrice + totalTaxPct;
     return (
-        <table class="table table-success table-striped table-hover text-center">
+        <table class="table table-success caption-top table-striped table-hover text-center">
+            <caption>List of orders</caption>
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -22,7 +23,7 @@ const TotalOrder = (props) => {
                     <td>{user?.name}</td>
                     <td>{order_id}</td>
                     <td>{restaurant?.name}</td>
-                    <td>{gTotal}</td>
+                    <td>{gTotal}/=</td>
                 </tr>
             </tbody>
         </table>
